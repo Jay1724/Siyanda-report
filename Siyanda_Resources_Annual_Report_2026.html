@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siyanda Resources Group — Annual Report 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C8963E;
+  --gold-light:#F0E0C0;
+  --gold-dark:#8B6420;
+  --dark:#1A1A18;
+  --light:#F5F2EC;
+  --rule:rgba(200,150,62,0.3);
+  --text:#2C2B27;
+  --muted:#7A7870;
+}
+body{font-family:'DM Sans',sans-serif;background:#F5F2EC;color:var(--text);max-width:1100px;margin:0 auto}
+.report{overflow:hidden}
+
+.cover{background:var(--dark);color:#F5F2EC;padding:4rem 3rem 3rem;position:relative;min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
+.cover::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(200,150,62,0.08) 100%)}
+.cover-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;font-weight:400}
+.cover-title{font-family:'Playfair Display',serif;font-size:3.5rem;line-height:1.05;font-weight:700;margin-bottom:0.5rem}
+.cover-title em{font-style:italic;color:var(--gold)}
+.cover-year{font-family:'Playfair Display',serif;font-size:6rem;font-weight:400;color:rgba(245,242,236,0.06);position:absolute;bottom:1.5rem;right:2rem;letter-spacing:-0.02em}
+.cover-sub{font-size:13px;line-height:1.8;color:rgba(245,242,236,0.5);max-width:480px;margin-top:1rem;font-weight:300}
+.cover-rule{width:48px;height:2px;background:var(--gold);margin-bottom:1.5rem}
+
+.contents-bar{background:#3D3020;display:grid;grid-template-columns:repeat(4,1fr)}
+.contents-item{padding:1rem 1.25rem;border-right:1px solid rgba(200,150,62,0.2);color:#E8DCC8}
+.contents-item:last-child{border-right:none}
+.contents-num{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,150,62,0.55);display:block;margin-bottom:0.25rem}
+.contents-label{font-size:12px;font-weight:500}
+
+.section{padding:2.5rem 3rem}
+.section-alt{background:#fff}
+
+.section-tag{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem}
+.tag-number{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;color:var(--gold);line-height:1}
+.tag-rule{flex:1;height:1px;background:var(--rule)}
+.tag-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+
+.section-headline{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;line-height:1.2;margin-bottom:0.5rem}
+.section-sub{font-size:13px;color:var(--muted);margin-bottom:1.75rem;line-height:1.7;font-weight:300}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+.pillar{padding:1.25rem;border:1px solid var(--rule);border-left:3px solid var(--gold)}
+.pillar-title{font-size:13px;font-weight:500;margin-bottom:0.4rem;color:var(--dark)}
+.pillar-body{font-size:12px;color:var(--muted);line-height:1.6}
+
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-bottom:2rem}
+.stat-cell{background:var(--light);padding:1.5rem 1.25rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;display:block}
+.stat-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:0.4rem;display:block}
+
+.stat-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-bottom:2rem}
+
+.table-wrap{overflow-x:auto;margin-bottom:1.5rem}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead tr{background:var(--dark);color:#F5F2EC}
+thead th{padding:0.6rem 0.8rem;text-align:left;font-weight:400;letter-spacing:0.06em;font-size:10px;text-transform:uppercase}
+tbody tr{border-bottom:1px solid rgba(200,150,62,0.12)}
+tbody tr:hover{background:rgba(200,150,62,0.05)}
+tbody td{padding:0.55rem 0.8rem;color:var(--text)}
+tbody td.amt{font-weight:500;color:var(--gold-dark)}
+.table-total{background:#F0E8D5 !important}
+.table-total td{color:var(--dark) !important;border-top:2px solid var(--gold) !important}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+.project-card{border:1px solid var(--rule);padding:1.25rem;background:#fff}
+.project-card-label{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.4rem}
+.project-card-name{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:0.75rem;line-height:1.3}
+.project-card-cost{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);font-weight:700}
+
+.divider{height:1px;background:var(--rule);margin:0 3rem}
+
+.quote-block{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-bottom:1.75rem;background:rgba(200,150,62,0.04)}
+.quote-text{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;line-height:1.6;color:var(--dark);margin-bottom:0.4rem}
+.quote-attr{font-size:11px;color:var(--muted);letter-spacing:0.05em}
+
+.section-divider{display:flex;align-items:center;gap:1rem;padding:1.5rem 3rem;background:var(--dark)}
+.sd-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,242,236,0.4)}
+.sd-title{font-family:'Playfair Display',serif;color:#F5F2EC;font-size:1.1rem;font-weight:400}
+.sd-rule{flex:1;height:1px;background:rgba(200,150,62,0.25)}
+
+.progress-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.6rem}
+.progress-name{font-size:12px;color:var(--text);width:160px;flex-shrink:0;line-height:1.3}
+.progress-bar-bg{flex:1;height:6px;background:rgba(200,150,62,0.12)}
+.progress-bar-fill{height:100%;background:var(--gold)}
+.progress-val{font-size:12px;font-weight:500;color:var(--dark);width:80px;text-align:right;flex-shrink:0}
+
+.badge-complete{display:inline-block;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;background:#F0E0C0;color:#6B4E10;padding:2px 7px;border-radius:2px}
+.badge-progress{display:inline-block;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;background:#EDD89A;color:#5C3D05;padding:2px 7px;border-radius:2px}
+
+.footnote{padding:1.5rem 3rem;background:var(--dark);color:rgba(245,242,236,0.35);font-size:11px;line-height:1.6;display:flex;justify-content:space-between;align-items:center}
+.fn-brand{font-family:'Playfair Display',serif;color:rgba(245,242,236,0.6);font-size:13px}
+
+@media print {
+  body{max-width:100%;margin:0}
+  .cover{page-break-after:always}
+  .section-divider{page-break-before:always}
+}
+</style>
+</head>
+<body>
+<div class="report">
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <div class="cover-eyebrow">Siyanda Resources Group</div>
+    <div class="cover-rule"></div>
+    <div class="cover-title">Annual<br><em>Report</em></div>
+    <div class="cover-sub">A year defined by resilience, progress, and purposeful investment in people, partnerships, and the future of communities we serve across South Africa.</div>
+  </div>
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:2.5rem">
+    <div style="font-size:11px;color:rgba(245,242,236,0.3);letter-spacing:0.12em;text-transform:uppercase">Nutrition · Education · Skills · Infrastructure · Health</div>
+    <div style="font-size:11px;color:rgba(245,242,236,0.3)">2026</div>
+  </div>
+  <div class="cover-year">2026</div>
+</div>
+
+<!-- CONTENTS -->
+<div class="contents-bar">
+  <div class="contents-item"><span class="contents-num">Section 01</span><span class="contents-label">CSI Monthly Report 2025</span></div>
+  <div class="contents-item"><span class="contents-num">Section 02</span><span class="contents-label">SLP2 Close-Out 2024</span></div>
+  <div class="contents-item"><span class="contents-num">Section 03</span><span class="contents-label">SLP3 Implementation 2025</span></div>
+  <div class="contents-item"><span class="contents-num">Section 04</span><span class="contents-label">SCI Community Report</span></div>
+</div>
+
+<!-- SECTION 01 -->
+<div class="section">
+  <div class="section-tag">
+    <span class="tag-number">01</span>
+    <div class="tag-rule"></div>
+    <span class="tag-label">Siyanda Resources · CSI Monthly Report 2025</span>
+  </div>
+  <div class="section-headline">Community Social Investment</div>
+  <div class="section-sub">Initiatives across three core pillars delivering sustained community assistance.</div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-title">Nutrition Centres</div>
+      <div class="pillar-body">Establishing soup kitchens providing essential sustenance to families lacking regular meal access across KZN.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Basic Education Support</div>
+      <div class="pillar-body">School facilities, uniforms, stationery and tertiary financial assistance to break the cycle of poverty.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Skills Development</div>
+      <div class="pillar-body">Programmes enabling community members to gain independence, find employment and contribute positively.</div>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-cell"><span class="stat-num">14</span><span class="stat-label">Active distribution centres</span></div>
+    <div class="stat-cell"><span class="stat-num">340</span><span class="stat-label">Families fed monthly</span></div>
+    <div class="stat-cell"><span class="stat-num">58</span><span class="stat-label">Volunteers supporting distribution</span></div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">"No man can be wise on an empty stomach."</div>
+    <div class="quote-attr">— George Eliot</div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1rem">Nutrition centre donations — Jozini, KZN</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Beneficiary</th><th>Month</th><th>Year</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Eyethucic</td><td>Aug</td><td>2023</td><td class="amt">R17 938</td></tr>
+            <tr><td>Siyaphambili Qhondile</td><td>Aug</td><td>2023</td><td class="amt">R18 244</td></tr>
+            <tr><td>CFCFI Biva branch</td><td>Aug</td><td>2023</td><td class="amt">R20 262</td></tr>
+            <tr><td>Siyaphambili</td><td>Sep</td><td>2024</td><td class="amt">R50 779</td></tr>
+            <tr><td>Biva CFCI</td><td>Sep</td><td>2024</td><td class="amt">R22 450</td></tr>
+            <tr><td>Eyethu CIC</td><td>Sep</td><td>2024</td><td class="amt">R32 239</td></tr>
+            <tr><td>Siyaphambili</td><td>Apr</td><td>2025</td><td class="amt">R21 690</td></tr>
+            <tr><td>Biva CFCI</td><td>Apr</td><td>2025</td><td class="amt">R21 711</td></tr>
+            <tr class="table-total"><td colspan="3"><strong>Total contributions</strong></td><td class="amt">R470 515</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1rem">Student financial assistance</div>
+      <div class="stat-grid-2" style="margin-bottom:1.25rem">
+        <div class="stat-cell"><span class="stat-num" style="font-size:2rem">417</span><span class="stat-label">Students funded since 2011</span></div>
+        <div class="stat-cell"><span class="stat-num" style="font-size:2rem">R8.47M</span><span class="stat-label">Total disbursed to date</span></div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:0.75rem">Qualification breakdown</div>
+      <div class="progress-row"><span class="progress-name">Degree graduates</span><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:68%"></div></div><span class="progress-val">286 students</span></div>
+      <div class="progress-row"><span class="progress-name">Diploma level</span><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:14%"></div></div><span class="progress-val">57 students</span></div>
+      <div class="progress-row"><span class="progress-name">Higher Certificate</span><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:3%"></div></div><span class="progress-val">12 students</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- EDUCATION & INFRASTRUCTURE -->
+<div class="section section-alt">
+  <div class="section-tag">
+    <div class="tag-rule"></div>
+    <span class="tag-label">Education &amp; Infrastructure Highlights</span>
+  </div>
+  <div class="two-col">
+    <div>
+      <div style="font-size:13px;font-weight:500;margin-bottom:1rem;color:var(--dark)">School ablution refurbishment</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:1rem">A R40.2M sanitation initiative to restore dignity and improve hygiene conditions across schools in Jouberton, Klerksdorp and KwaZulu-Natal. 26 dedicated volunteers maintain facilities daily.</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Contractor</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>DWP Civil &amp; Structural Engineers</td><td class="amt">R31 376 638</td></tr>
+            <tr><td>Rolten Construction (Pty) Ltd</td><td class="amt">R5 229 123</td></tr>
+            <tr><td>NEB Builders</td><td class="amt">R3 582 625</td></tr>
+            <tr class="table-total"><td><strong>Total project value</strong></td><td class="amt">R40 188 387</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:500;margin-bottom:1rem;color:var(--dark)">KZN school structural improvements</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>School / Item</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Siholwa Primary — Classroom Renovations</td><td class="amt">R591 530</td></tr>
+            <tr><td>Nkululekwene Primary — Laptops</td><td class="amt">R208 410</td></tr>
+            <tr><td>Nkululekwene Primary — Jungle Gyms</td><td class="amt">R29 700</td></tr>
+            <tr><td>Siholwa Primary — Kitchen Appliances</td><td class="amt">R274 594</td></tr>
+            <tr class="table-total"><td><strong>Sub-total</strong></td><td class="amt">R1 104 234</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:1rem;font-size:13px;font-weight:500;color:var(--dark);margin-bottom:0.6rem">Uniform distribution</div>
+      <div class="stat-grid-2" style="margin-bottom:0">
+        <div class="stat-cell"><span class="stat-num" style="font-size:2rem">2 659</span><span class="stat-label">Scholars received uniforms</span></div>
+        <div class="stat-cell"><span class="stat-num" style="font-size:2rem">R2.52M</span><span class="stat-label">Investment over 3 years</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem">
+    <div style="font-size:13px;font-weight:500;margin-bottom:1rem;color:var(--dark)">Robotics &amp; AI Innovation — KZN (2022–2025)</div>
+    <div class="two-col">
+      <div>
+        <div class="stat-grid" style="margin-bottom:0">
+          <div class="stat-cell"><span class="stat-num" style="font-size:2rem">122</span><span class="stat-label">Students enrolled &amp; graduated</span></div>
+          <div class="stat-cell"><span class="stat-num" style="font-size:2rem">7</span><span class="stat-label">Partner schools</span></div>
+          <div class="stat-cell"><span class="stat-num" style="font-size:2rem">R929K</span><span class="stat-label">Total programme spend</span></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.75rem">Annual spend progression</div>
+        <div class="progress-row"><span class="progress-name">2023</span><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:7%"></div></div><span class="progress-val">R31 135</span></div>
+        <div class="progress-row"><span class="progress-name">2024</span><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:31%"></div></div><span class="progress-val">R227 243</span></div>
+        <div class="progress-row"><span class="progress-name">2025</span><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:66%"></div></div><span class="progress-val">R484 987</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 02 DIVIDER -->
+<div class="section-divider">
+  <div><span class="sd-label">Section 02 &amp; 03 · </span><span class="sd-title">Siyanda Bakgatla Platinum Mine — SLP2 Close-Out &amp; SLP3 Implementation</span></div>
+  <div class="sd-rule"></div>
+</div>
+
+<!-- SECTION 02 -->
+<div class="section">
+  <div class="section-tag">
+    <span class="tag-number">02</span>
+    <div class="tag-rule"></div>
+    <span class="tag-label">SBPM · SLP2 Close-Out Report 2024</span>
+  </div>
+  <div class="section-headline">LED Progress — 2016–2020 Social Labour Plan</div>
+  <div class="section-sub">Major capital investments in school infrastructure, libraries and healthcare facilities across the Bojanala Platinum District.</div>
+
+  <div class="three-col" style="margin-bottom:1.5rem">
+    <div class="project-card">
+      <div class="project-card-label">School upgrade</div>
+      <div class="project-card-name">Okomelang Primary School</div>
+      <div class="project-card-cost">R8.2M</div>
+      <div style="margin-top:0.4rem"><span class="badge-complete">Completed</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">School upgrade</div>
+      <div class="project-card-name">Dinkwe Primary School</div>
+      <div class="project-card-cost">R6.7M</div>
+      <div style="margin-top:0.4rem"><span class="badge-complete">Completed</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Community facility</div>
+      <div class="project-card-name">Northam Library Revitalisation</div>
+      <div class="project-card-cost">—</div>
+      <div style="margin-top:0.4rem"><span class="badge-complete">Completed</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Healthcare</div>
+      <div class="project-card-name">Kraalhoek Clinic Upgrade</div>
+      <div class="project-card-cost">—</div>
+      <div style="margin-top:0.4rem"><span class="badge-complete">Completed</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Healthcare</div>
+      <div class="project-card-name">Modderkuil Clinic Renovation</div>
+      <div class="project-card-cost">—</div>
+      <div style="margin-top:0.4rem"><span class="badge-complete">Completed</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">School upgrade</div>
+      <div class="project-card-name">Nkobong &amp; Mochudi Secondary Schools</div>
+      <div class="project-card-cost">—</div>
+      <div style="margin-top:0.4rem"><span class="badge-complete">Completed</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 03 -->
+<div class="section section-alt">
+  <div class="section-tag">
+    <span class="tag-number">03</span>
+    <div class="tag-rule"></div>
+    <span class="tag-label">SBPM · SLP3 Implementation Report 2025</span>
+  </div>
+  <div class="section-headline">LED Budget vs Actual — 2021–2025</div>
+  <div class="section-sub">Targeted investment in community infrastructure across Northam, Disake and Mononono.</div>
+
+  <div class="table-wrap" style="margin-bottom:1.75rem">
+    <table>
+      <thead><tr><th>Location</th><th>Project</th><th>Budget</th><th>Actual</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Northam</td><td>Electricity infrastructure upgrades (high mast lights)</td><td class="amt">R8 000 000</td><td class="amt">R6 783 604</td><td><span class="badge-complete">100% complete</span></td></tr>
+        <tr><td>Disake</td><td>Upgrade of Neo Clinic</td><td class="amt">R4 857 138</td><td class="amt">R4 776 880</td><td><span class="badge-complete">100% complete</span></td></tr>
+        <tr><td>Mononono</td><td>Upgrade of Mononono Clinic</td><td class="amt">R4 857 138</td><td class="amt">R4 776 880</td><td><span class="badge-progress">98% — punch list</span></td></tr>
+        <tr><td>Northam</td><td>Upgrade of Ofentse Primary School</td><td class="amt">—</td><td class="amt">R4 715 551</td><td><span class="badge-complete">100% complete</span></td></tr>
+        <tr><td>Northam</td><td>Ambulance donation to Limpopo Dept of Health</td><td class="amt">—</td><td class="amt">R881 394</td><td><span class="badge-progress">98% — punch list</span></td></tr>
+        <tr><td>Northam</td><td>Ya Ga Rona Crèche equipment</td><td class="amt">—</td><td class="amt">R177 000</td><td><span class="badge-complete">100% complete</span></td></tr>
+        <tr class="table-total"><td colspan="3"><strong>Total LED expenditure (SLP3)</strong></td><td class="amt"><strong>R19 996 221</strong></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 04 DIVIDER -->
+<div class="section-divider">
+  <div><span class="sd-label">Section 04 · </span><span class="sd-title">Siyanda Chrome Investment — SCI Community Report 2024–2026</span></div>
+  <div class="sd-rule"></div>
+</div>
+
+<!-- SECTION 04 -->
+<div class="section">
+  <div class="section-tag">
+    <span class="tag-number">04</span>
+    <div class="tag-rule"></div>
+    <span class="tag-label">Siyanda Chrome Investment · Community Report</span>
+  </div>
+  <div class="section-headline">Building Community Through Shared Moments</div>
+  <div class="section-sub">Social engagement, healthcare, education and infrastructure investment across Limpopo &amp; North West communities surrounding SCI operations.</div>
+
+  <div class="three-col" style="margin-bottom:2rem">
+    <div class="project-card">
+      <div class="project-card-label">Community feeding</div>
+      <div class="project-card-name">Botshabelo Feeding Centre, Mantserre — Q2 2025 contributions</div>
+      <div class="project-card-cost" style="font-size:1.1rem">R36 750</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:0.5rem;line-height:1.5">R30 000 groceries/toiletries/school materials + R6 750 fresh bread (twice weekly)</div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Sanitation</div>
+      <div class="project-card-name">Mantserre URC Church — Community toilet cubicles</div>
+      <div class="project-card-cost" style="font-size:1.1rem">In progress</div>
+      <div style="margin-top:0.4rem"><span class="badge-progress">50% foundations complete</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Sports &amp; mental health</div>
+      <div class="project-card-name">Siyanda Wildebeest Rugby — Ampie le Roux Cup</div>
+      <div class="project-card-cost" style="font-size:1.1rem">R14 261</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:0.5rem">New kit + sponsorship of inaugural cup</div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Youth education</div>
+      <div class="project-card-name">Christmas celebration — 305 children from local preschools</div>
+      <div class="project-card-cost" style="font-size:1.1rem">R73 365</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:0.5rem">School bags, stationery, books &amp; meals</div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Career development</div>
+      <div class="project-card-name">Rooseveldt Grade 9 Career Guidance Day</div>
+      <div class="project-card-cost" style="font-size:1.1rem">Pro bono</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:0.5rem">Subject selection &amp; career path counselling for future leaders</div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-label">Community support</div>
+      <div class="project-card-name">Thabazimbi homeless shelter — gifts, school shoes &amp; reusable pads</div>
+      <div class="project-card-cost" style="font-size:1.1rem">Donated</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:0.5rem">10 Dec 2024</div>
+    </div>
+  </div>
+
+  <div style="border:1px solid var(--rule);padding:1.5rem;background:rgba(200,150,62,0.03)">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:0.75rem">Closing statement</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1rem;line-height:1.8;color:var(--dark)">Across each of these projects, a common thread emerges — a deep commitment to restoring dignity, expanding opportunity, and strengthening the fabric of community life. From classrooms and clinics to libraries and sanitation facilities, these investments touch everyday experiences, shaping how learners learn, how patients are cared for, and how communities access essential services.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footnote">
+  <div class="fn-brand">Siyanda Resources Group · Annual Report 2026</div>
+  <div>Nutrition · Education · Skills Development · Sports · Innovation · Infrastructure · Health</div>
+</div>
+
+</div>
+</body>
+</html>
